@@ -1,0 +1,11 @@
+#!/bin/bash
+
+if [ $# -eq 0 ]
+then
+    args=$(xclip -o)
+else
+    args="${@:1}"
+fi
+
+source ~/code/quick-qr/venv/bin/activate
+python3 ~/code/quick-qr/main.py $args
