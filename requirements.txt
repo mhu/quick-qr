@@ -1,2 +1,4 @@
 qrcode
 Pillow
+pyinstaller
+pyperclip

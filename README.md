@@ -13,16 +13,22 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-Additionally, the [qqr](qqr) file can be moved to `/usr/local/bin/` and made executable to enable functionality system-wide.
+Rebundle the application using PyInstaller:
 
 ```bash
-cp qqr /usr/local/bin/qqr
-chmod + x /usr/local/bin/qqr
+pyinstaller main.py --name qqr --onefile
+```
+
+Additionally, the [qqr](dist/qqr) file can be moved to `/usr/local/bin/` and made executable to enable functionality system-wide.
+
+```bash
+cp dist/qqr /usr/local/bin/qqr
+chmod +x /usr/local/bin/qqr
 ```
 
 ## Usage
 
-You can call the Python script directly or install the utility globally (by making [qqr](qqr) executable and moving it to e.g. `/usr/local/bin/`).
+You can call the Python script directly or install the utility globally (by making [qqr](qqr) executable and copying it to e.g. `/usr/local/bin/`).
 
 The following examples will create QR codes containing the given strings:
 
@@ -41,4 +47,6 @@ qrr
 
 * [qrcode](https://github.com/lincolnloop/python-qrcode) - Python QR Code image generator
 * [Pillow](https://github.com/python-pillow/Pillow) - Python Imaging Library
+* [pyinstaller](https://github.com/pyinstaller/pyinstaller) - Python application bundler
+* [pyperclip](https://github.com/asweigart/pyperclip) - Python module for cross-platform clipboard functions
 * [xclip](https://github.com/astrand/xclip) - Command line interface to the X11 clipboard
